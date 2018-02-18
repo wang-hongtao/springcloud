@@ -33,27 +33,11 @@
 		<jansi.version>1.16</jansi.version>
 		<kotlin.version>1.0.6</kotlin.version>
 	</properties>
-	<dependencies>
 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-devtools</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.fusesource.jansi</groupId>
-			<artifactId>jansi</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.alibaba</groupId>
-			<artifactId>fastjson</artifactId>
-		</dependency><!-- https://mvnrepository.com/artifact/com.xuxueli/xxl-job-core -->
+	<modules>
+		<module>	waves-commons</module>
 
-	</dependencies>
+	</modules>
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
@@ -133,7 +117,7 @@
 						<groupId>com.mchange</groupId>
 						<artifactId>c3p0</artifactId>
 					</exclusion>
-					
+
 					<exclusion>
 						<groupId>com.mchange</groupId>
 						<artifactId>mchange-commons-java</artifactId>
@@ -202,4 +186,4 @@
 			</plugins>
 		</pluginManagement>
 	</build>
-</project>
+	</project>
