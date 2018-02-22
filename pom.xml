@@ -11,8 +11,6 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
 		<!-- spring相关版本 -->
-		
-		<spring.boot.version>1.5.10.RELEASE</spring.boot.version>
 		<spring-cloud.version>Edgware.RELEASE</spring-cloud.version>
 		<!-- <spring-cloud.version>Dalston.SR4</spring-cloud.version> -->
 		<!-- database相关依赖版本 -->
@@ -23,13 +21,7 @@
 		<fastjson.version>1.2.41</fastjson.version>
 		<commons-email.version>1.4</commons-email.version>
 		<commons-math3.version>3.6.1</commons-math3.version>
-		<commons-fileupload.version>1.3.2</commons-fileupload.version>
-		<commons.lang3.version>3.6</commons.lang3.version>
-		<commons.io.version>2.5</commons.io.version>
-		<!-- <commons-collections.version>4.1</commons-collections.version> -->
-		<jasperreports.version>6.3.0</jasperreports.version>
 		<shiro.version>1.4.0</shiro.version>
-		<quartz.version>2.3.0</quartz.version>
 		<activiti.version>5.22.0</activiti.version>
 		<jansi.version>1.16</jansi.version>
 		<kotlin.version>1.0.6</kotlin.version>
@@ -37,12 +29,26 @@
 
 	<modules>
 		<module>	waves-commons</module>
-
 		<module>waves-eureka-server</module>
 		<module>waves-config-server</module>
 	</modules>
 	<dependencyManagement>
 		<dependencies>
+
+			<dependency>
+				<groupId>io.spring.platform</groupId>
+				<artifactId>platform-bom</artifactId>
+				<version>Brussels-SR7</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring-cloud.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
 			<dependency>
 				<groupId>org.apache.commons</groupId>
 				<artifactId>commons-email</artifactId>
@@ -53,37 +59,6 @@
 				<artifactId>commons-math3</artifactId>
 				<version>${commons-math3.version}</version>
 			</dependency>
-			<dependency>
-				<groupId>commons-fileupload</groupId>
-				<artifactId>commons-fileupload</artifactId>
-				<version>${commons-fileupload.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.commons</groupId>
-				<artifactId>commons-lang3</artifactId>
-				<version>${commons.lang3.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>commons-io</groupId>
-				<artifactId>commons-io</artifactId>
-				<version>${commons.io.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-dependencies</artifactId>
-				<version>${spring.boot.version}</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-
-			<dependency>
-				<groupId>org.springframework.cloud</groupId>
-				<artifactId>spring-cloud-dependencies</artifactId>
-				<version>${spring-cloud.version}</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-			<!-- https://mvnrepository.com/artifact/org.fusesource.jansi/jansi -->
 			<dependency>
 				<groupId>org.fusesource.jansi</groupId>
 				<artifactId>jansi</artifactId>
@@ -104,45 +79,11 @@
 				<artifactId>mybatis-spring-boot-starter</artifactId>
 				<version>${mybatis.spring.boot.version}</version>
 			</dependency>
-
 			<dependency>
 				<groupId>com.alibaba</groupId>
 				<artifactId>druid-spring-boot-starter</artifactId>
 				<version>${druid.starter.version}</version>
 			</dependency>
-
-			<dependency>
-				<groupId>org.quartz-scheduler</groupId>
-				<artifactId>quartz</artifactId>
-				<version>${quartz.version}</version>
-				<exclusions>
-					<exclusion>
-						<groupId>com.mchange</groupId>
-						<artifactId>c3p0</artifactId>
-					</exclusion>
-
-					<exclusion>
-						<groupId>com.mchange</groupId>
-						<artifactId>mchange-commons-java</artifactId>
-					</exclusion>
-					<exclusion>
-						<groupId>com.zaxxer</groupId>
-						<artifactId>HikariCP-java6</artifactId>
-					</exclusion>
-				</exclusions>
-			</dependency>
-			<dependency>
-				<groupId>org.quartz-scheduler</groupId>
-				<artifactId>quartz-jobs</artifactId>
-				<version>${quartz.version}</version>
-			</dependency>
-			<!-- https://mvnrepository.com/artifact/net.coobird/thumbnailator -->
-			<dependency>
-				<groupId>net.coobird</groupId>
-				<artifactId>thumbnailator</artifactId>
-				<version>0.4.8</version>
-			</dependency>
-
 		</dependencies>
 
 	</dependencyManagement>
@@ -189,4 +130,4 @@
 			</plugins>
 		</pluginManagement>
 	</build>
-	</project>
+</project>
