@@ -27,3 +27,4 @@ pom.properties
 # .gitignore for maven 
 target/
 *.releaseBackup
+*/.DS_Store
