@@ -38,6 +38,8 @@
 	<modules>
 		<module>	waves-commons</module>
 
+		<module>waves-eureka-server</module>
+		<module>waves-config-client</module>
 	</modules>
 	<dependencyManagement>
 		<dependencies>
