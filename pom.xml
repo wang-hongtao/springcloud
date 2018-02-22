@@ -39,7 +39,7 @@
 		<module>	waves-commons</module>
 
 		<module>waves-eureka-server</module>
-		<module>waves-config-client</module>
+		<module>waves-config-server</module>
 	</modules>
 	<dependencyManagement>
 		<dependencies>
